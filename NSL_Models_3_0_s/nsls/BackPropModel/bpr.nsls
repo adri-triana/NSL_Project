@@ -1,0 +1,15 @@
+# SCCS  %W% - %G% - %U% 
+
+# Copyright (c) 1999 University of Southern California Brain Project 
+# email nsl@java.usc.edu 
+
+for { set i 0 } { $i < 2 } {incr i} {
+    for { set j 0 } { $j < 2 } {incr j} {
+        set p [list $i $j]
+        nsl set backPropModel.forward.p $p
+        nsl initRun
+        nsl simRun
+        nsl endRun
+        puts "For { $i $j } the output is { [nsl get backPropModel.forward.yo] } "
+    }
+}

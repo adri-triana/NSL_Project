@@ -1,0 +1,12 @@
+# SCCS  %W% - %G% - %U% 
+
+# Copyright (c) 1999 University of Southern California Brain Project 
+# email nsl@java.usc.edu 
+
+nsl set backPropModel.train.patterns  { { 0 0 } { 0 1 } { 1 0 } { 1 1 } }
+nsl set backPropModel.train.outputs { { 0 } { 1 } { 1 } { 0 } }
+#nsl set system.numTrainEpochs 1000
+nsl set backPropModel.error.epsilon 0.0001
+nsl set backPropModel.update.lrate 0.8
+nsl doTrainEpochTimes
+

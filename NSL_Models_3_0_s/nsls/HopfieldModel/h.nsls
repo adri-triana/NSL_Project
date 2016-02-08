@@ -1,0 +1,96 @@
+# Copyright (c) 2000 The Neural Simulation Language 
+
+#
+# Hopfield Network
+#
+
+set A {}
+set B {}
+set C {}
+set D {}
+
+proc memorize { x } {
+
+	puts "Memorizing $x"
+       	
+       	nsl set hopfieldModel.inModule.input $x
+	nsl train
+}
+
+proc test { x d } {
+
+	nsl set hopfieldModel.dis $d 
+	nsl set hopfieldModel.inModule.input $x
+	nsl run
+}
+
+proc initData {} {
+
+	global A B C D
+
+	set A { 
+		{ -1 -1  1  1 -1 -1 }
+	        { -1  1 -1 -1  1 -1 } 
+		{ -1  1  1  1  1 -1 } 
+		{ -1  1  1  1  1 -1 }
+		{ -1  1 -1 -1  1 -1 }
+		{ -1  1 -1 -1  1 -1 }
+	}
+ 
+	set B { 
+		{ 1  1 -1 -1 -1 -1 }
+		{ 1  1 -1 -1 -1 -1 } 
+		{ 1  1  1  1 -1 -1 }
+		{ 1  1 -1 -1  1 -1 }  
+		{ 1  1 -1 -1  1 -1 } 
+		{ 1  1  1  1 -1 -1 } 
+	}
+ 
+	set C {
+		{ -1 -1  1  1  1 -1 } 
+		{ -1  1 -1 -1 -1  1 }
+		{  1 -1 -1 -1 -1 -1 }
+		{  1 -1 -1 -1 -1 -1 }
+		{ -1  1 -1 -1 -1  1 }
+ 		{ -1 -1  1  1  1 -1 }
+	}
+ 
+	set D {
+		{ -1 -1 -1 -1  1  1 }
+		{ -1 -1 -1 -1  1  1 } 
+		{ -1  1  1  1  1  1 } 
+		{  1 -1 -1 -1  1  1 }
+		{  1 -1 -1 -1  1  1 } 
+		{ -1  1  1  1  1  1 }
+	} 
+}
+
+proc trainNetwork {} {
+	global A B C D
+
+	memorize $A
+	memorize $B
+	memorize $C
+	memorize $D
+}
+
+
+proc NslMain {} {
+	
+	global A B C D
+	
+	puts "Initializing"
+	initData
+
+	puts "Training"
+	trainNetwork
+
+	puts "Testing"
+	for { set i 0 } { $i<10 } { incr i } {
+		puts "Testing with distortion $i"
+		test $A $i
+	}
+	nsl set hopfieldModel.dis 0
+} 
+
+NslMain

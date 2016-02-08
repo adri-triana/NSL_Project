@@ -1,0 +1,46 @@
+<!-- maxSelector.xml -->
+
+<chosenModel id="maxSelector">
+
+	<system>
+
+
+		
+		<simEndTime> 20.0 </simEndTime>
+		<simDelta> 0.01 </simDelta>
+		<diff>
+			<integration> EULER </integration>
+			<delta> 0.01 </delta>
+		</diff>
+		<model> MaxSelectorModel </model>
+		
+
+	</system>
+
+		<!-- setting all of the variable values -->
+	
+	
+	<MaxSelectorModel>
+
+		<maxSelector>	
+
+			<tu> 1.0 </tu>
+			<tv> 1.0 </tv>
+			<k> 0.1 </k>
+			<wuu> 1.0 </wuu>
+			<wuv> 1.0 </wuv>
+			<wvu> 1.0 </wvu>
+			<hu> 0.1 </hu>
+			<hv> 0.5 </hv>
+					
+		</maxSelector>
+
+		<stimulus>
+
+			<out> 0 0 0 0 1.0 0 0.5 0 0 0 </out>
+
+		</stimulus>
+
+	</MaxSelectorModel>
+
+</chosenModel>
