@@ -25,7 +25,7 @@ package MaxSelectorModel;
 /* MaxSelectorModel is the name of the model */
 /* MaxSelectorModel does not contain any outside ports, but does inherit NslModule */
 
-import nslj.main.*;
+ import nslj.main.*;
  import nslj.src.system.*; 
  import nslj.src.cmd.*; 
  import nslj.src.lang.*; 
@@ -44,6 +44,7 @@ public class MaxSelectorModel/*()*/  extends NslModel/*()*/ {
 	public  void initSys() {
 		system.setRunEndTime(10.0);
 		system.nslSetRunDelta(0.01);
+                
 	}
 	public  void makeConn() {
                 nslConnect(stimulus.s_out, maxselector.in);

@@ -17,14 +17,8 @@ import nslj.src.math.*;
 import nslj.src.display.*;
 import nslj.src.exceptions.*;
 
-//Files for the xml parser //
-import java.io.File;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.DocumentBuilder;
-import org.w3c.dom.Document;
-import org.w3c.dom.NodeList;
-import org.w3c.dom.Node;
-import org.w3c.dom.Element;
+//Package which contains the parser//
+import xmlUtility.xmlParser;
 
 /**
  * The main routine.
@@ -358,34 +352,10 @@ public class NslMain {
 	} 
         
         
-        /* Code for parsing an xml document and retrieving the data that will be used to initialzie model variables. */
+             
+     xmlParser parse = new xmlParser();
+     parse.parseMaxSelector();
         
-         try {	
-         File inputFile = new File("maxSelector.xml");
-         DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-         DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-         Document doc = dBuilder.parse(inputFile);
-         doc.getDocumentElement().normalize();
-                  
-         System.out.println("Root element :" 
-            + doc.getDocumentElement().getNodeName());
-        
-        //getElementsByTagName searches the xml document and returns an array of elements with specified name
-        //in this case the array is of size 1 because there is only one element with simEndTime as the name
-        NodeList nList = doc.getElementsByTagName("simEndTime");
-        int temp = 0;
-        //currNode is then set to be the node in the array that we are currently at in nList which is simEndTime
-        Node currNode = nList.item(temp);
-        System.out.println("Current Element that we are at in XML is " + currNode.getNodeName());
-        //Gets the first child of the currNode (simEndTime) which is the text node, then gets the node value of the text node which is
-        //the value inside the simEndTime tags in the xml doc.
-        System.out.println(currNode.getFirstChild().getNodeValue());
-        
-        
-         }
-         catch (Exception e) {
-         e.printStackTrace();
-         }
     }
 
 }

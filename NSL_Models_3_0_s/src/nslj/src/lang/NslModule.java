@@ -147,6 +147,7 @@ public  class NslModule extends NslHierarchy implements Runnable{
   public NslModule(String label,NslModule parent) {
 	  super(label,parent, parent.nslGetAccess());
 	  nslSetModuleSpecificParams(label,parent);
+          
   }
 
 
