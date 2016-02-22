@@ -343,7 +343,7 @@ public void nslSetAccessRecursive(char new_desiredAccess) {
     if (E.hasMoreElements()) {
       while(E.hasMoreElements()) {
         child = (NslModule)E.nextElement();
-        // System.out.println("Debug: NslModule: Adding Module "+child.nslGetName());
+        System.out.println("Debug: NslModule: Adding Module "+child.nslGetName());
       }
     }
   }
