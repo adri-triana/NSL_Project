@@ -958,13 +958,14 @@ public NslHierarchy getRefToModuleOrClass(String name, char desiredAccess) {
 
   /**
    * Set the current module context
-   * @param module the module to be defined as current module
+     * @param model
+   * module the module to be defined as current module
    */
-  /*
+  
   public void nslSetModelRef (NslModule model) {
       modelRef = model;
   }
-  */
+  
 
   /**
    * Add user command into the system

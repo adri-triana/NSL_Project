@@ -6,6 +6,7 @@
 package hierarchyList;
 
 import java.util.Vector;
+import nslj.src.lang.NslClass;
 import nslj.src.lang.NslModule;
 import nslj.src.lang.NslNumeric;
 import nslj.src.nsls.struct.Executive;
@@ -27,10 +28,8 @@ public class treeTraversal {
         
         NslModule top;
 	Vector children;
-        String name = "MaxSelectorStimulus";
-        NslModule child1;
-        NslModule child2;
-        NslModule child3;
+        
+        
 	
 
 	top = Executive.system.nslGetModelRef(); 
@@ -42,27 +41,40 @@ public class treeTraversal {
 	    
 	}
 	
+        
+        Executive.system.printModuleVariablesRecursively(top);
+        
+        
+        
+
+
+
+
+
+
+
         //Gets the children of the top module
-        children = top.nslGetModuleChildrenVector();
-        int i = 0;
-        
-        while(i < children.size())
-        {
-            System.out.println("Children of top module are: " + children.get(i));
-            
-            i++;
-        }
-        
-        //top.nslPrintChildModules();
-        
-        child1 = Executive.system.nslGetModuleRef(name);
-        if (child1 == null) { 
-            System.out.println("*** Child1 Module:" + child1.nslGetName());
-            
-        }
-        else {
-            System.out.println("******  Child module not found  ******");
-        }
+//        children = top.nslGetModuleChildrenVector();
+//        
+//        int i = 0;
+//        
+//        while(i < children.size())
+//        {
+//            System.out.println("Children of top module are: " + children.get(i));
+//            
+//            i++;
+//        }
+//        
+//        top.nslPrintChildModules();
+//        
+//        child1 = Executive.system.nslGetModuleRef(name);
+//        if (child1 == null) { 
+//            System.out.println("*** Child1 Module not found.***");
+//            
+//        }
+//        else {
+//            System.out.println("*** Child1 Module:" + child1.nslGetName());
+//        }
         
     }
     
