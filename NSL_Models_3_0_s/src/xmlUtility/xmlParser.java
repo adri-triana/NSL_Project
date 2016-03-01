@@ -42,7 +42,7 @@ public class xmlParser {
         
         //getElementsByTagName searches the xml document and returns an array of elements with specified name
         //in this case the array is of size 1 because there is only one element with simEndTime as the name
-        NodeList nList = doc.getElementsByTagName("simEndTime");
+        NodeList nList = doc.getElementsByTagName("");
         int temp = 0;
         //currNode is then set to be the node in the array that we are currently at in nList which is simEndTime
         Node currNode = nList.item(temp);

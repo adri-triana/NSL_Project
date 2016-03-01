@@ -22,6 +22,7 @@ import nslj.src.exceptions.*;
 import xmlUtility.xmlParser;
 //Package for tree structure
 import hierarchyList.treeTraversal;
+import nslj.src.nsls.struct.Executive;
 /**
  * The main routine.
  * Parses the command line options, instantiates all essential 
@@ -354,16 +355,18 @@ public class NslMain {
 	} 
      
         
+     //********************************************************************************   
+//          xmlParser parse = new xmlParser();
+//          parse.parseMaxSelector();
+     //********************************************************************************  
+        
+        
+        
         treeTraversal test = new treeTraversal();
         test.printHierarchy();
         
         
-        
-     //********************************************************************************   
-     //will use this eventually once i figure out how to traverse the tree structure        
-     //xmlParser parse = new xmlParser();
-     //parse.parseMaxSelector();
-     //********************************************************************************      
+         
     }
 
 }

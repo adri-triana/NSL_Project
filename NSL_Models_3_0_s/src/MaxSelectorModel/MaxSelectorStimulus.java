@@ -4,21 +4,30 @@ package MaxSelectorModel;
 //
 //////////////////////////////////////////////////////////////////////
 
+ import hierarchyList.treeTraversal;
  import nslj.src.system.*; 
  import nslj.src.cmd.*; 
  import nslj.src.lang.*; 
  import nslj.src.math.*; 
  import nslj.src.display.*; 
+ 
 
 public class MaxSelectorStimulus/*(int size)*/  extends NslModule/*()*/ {
 
 public NslDoutDouble1 s_out ; /*(size)*/
 
+
 	public  void initRun() {
 		s_out.set(0);
 		(s_out).set(1,0.5);
 		(s_out).set(3,1.0);
-                		(s_out).set(7,0.5);
+                (s_out).set(7,0.5);
+                
+                treeTraversal test = new treeTraversal();
+                test.setVariables(s_out);
+                                
+                                
+                                
 	}
 	/* nslInitTempModule inserted by NPP */
 public void nslInitTempModule() {

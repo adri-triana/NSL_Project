@@ -5,11 +5,11 @@
  */
 package hierarchyList;
 
+import java.util.Enumeration;
 import java.util.Vector;
-import nslj.src.lang.NslClass;
-import nslj.src.lang.NslModule;
-import nslj.src.lang.NslNumeric;
+import nslj.src.lang.*;
 import nslj.src.nsls.struct.Executive;
+import xmlUtility.xmlParser;
 
 /**
  *
@@ -25,10 +25,10 @@ public class treeTraversal {
      */
     public void printHierarchy()
     {
-        
+        String name = "maxSelectorModel.stimulus";
         NslModule top;
 	Vector children;
-        
+        NslData temp;
         
 	
 
@@ -42,11 +42,13 @@ public class treeTraversal {
 	}
 	
         
-        Executive.system.printModuleVariablesRecursively(top);
+       Executive.system.printModuleVariablesRecursively(top);
         
-        
-        
-
+       temp = Executive.system.nslGetValue(name);
+       System.out.println(name + " value is " + temp );
+       
+       NslModule temp2 = Executive.system.nslGetModuleRef(name);
+       System.out.println("Should print out module stimulus" + temp2);
 
 
 
@@ -78,7 +80,17 @@ public class treeTraversal {
         
     }
     
-    
+    public void setVariables(NslDoutDouble1 s_out){
+        
+        //This function will attempt to set the s_out variable that is found in the hierarchy using maxSelectorModel.stimulus.s_out and xml
+        
+        xmlParser parse = new xmlParser();
+        parse.parseMaxSelector();
+        
+        
+        
+        
+    }
     
     
     
