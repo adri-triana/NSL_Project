@@ -19,7 +19,7 @@
 
 		<!-- setting all of the variable values -->
 	
-	
+	<!-- these are all the modules found in the maxSelectorModel -->
 	<MaxSelectorModel>
 
 		<maxSelector>	
@@ -32,14 +32,46 @@
 			<wvu> 1.0 </wvu>
 			<hu> 0.1 </hu>
 			<hv> 0.5 </hv>
-					
+			<in> 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </in>
+			<out> 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </out>
+			
 		</maxSelector>
 
 		<stimulus>
 
-			<out> 0 0 0 0 1.0 0 0.5 0 0 0 </out>
+			<s_out> 0 0 0 0 1.0 0 0.5 0 0 0 </s_out>
 
 		</stimulus>
+		
+		<u1>
+
+			<s_in> 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </s_in> 
+			<v_in>0.0 </v_in>
+			<uf>0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </uf>
+			<up>0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </up>
+			<w1>0.0 </w1>
+			<w2>0.0 </w2>
+			<h1>0.0</h1>
+			<k>0.0</k>
+		</u1>
+		
+		<v1>
+			
+			<u_in> 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </u_in>
+			<vf> 0.0 </vf>
+			<vp> 0.0 </vp>
+			<h2> 0.0 </h2>
+			
+		</v1>
+		
+		
+		<output>
+		
+			<s_out> 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </s_out>
+			<uf> 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </uf>
+			<up> 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </up>
+			
+		</output>	
 
 	</MaxSelectorModel>
 

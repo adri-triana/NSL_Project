@@ -23,9 +23,6 @@ public NslDoutDouble1 s_out ; /*(size)*/
 		(s_out).set(3,1.0);
                 (s_out).set(7,0.5);
                 
-                treeTraversal test = new treeTraversal();
-                test.setVariables(s_out);
-                                
                                 
                                 
 	}
