@@ -3,11 +3,13 @@ package MaxSelectorModel;
 // Ulayer
 //
 //////////////////////////////////////////////////////////////////////
+import hierarchyList.treeTraversal;
  import nslj.src.system.*; 
  import nslj.src.cmd.*; 
  import nslj.src.lang.*; 
  import nslj.src.math.*; 
  import nslj.src.display.*; 
+import xmlUtility.xmlParser;
 
 public class Ulayer/*(int size)*/  extends NslModule/*()*/{
 //inports
@@ -31,10 +33,13 @@ public  void initModule() {
 	uf.set(0);
 	up.set(0);
 	tau = 1.0;
-	w1.set(1.0);
-	w2.set(1.0);
-	h1.set(0.1);
-	k.set(0.1);
+        
+        xmlParser parse = new xmlParser();
+        parse.setULayer(w1,w2,h1,k);
+        
+//        treeTraversal print = new treeTraversal();
+//        print.printHierarchy();
+
   }
 
   public  void simRun(){

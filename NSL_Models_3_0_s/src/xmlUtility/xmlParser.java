@@ -8,6 +8,7 @@ package xmlUtility;
 import java.io.File;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+import nslj.src.lang.*;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -22,14 +23,16 @@ import nslj.src.system.NslSystem;
  */
 public class xmlParser {
     
-    
-    public void parseMaxSelector()
+      
+    public void setULayer(NslDouble0 w1, NslDouble0 w2, NslDouble0 h1, NslDouble0 k)
     {
     /* Code for parsing maxSelector xml document and retrieving the data that will be used to initialzie model variables. */
         
-        
-        
-        
+        String wOne = "w1";
+        String wTwo = "w2";
+        String hOne = "h1";
+        String K = "k";
+               
          try {	
          File inputFile = new File("maxSelector.xml");
          DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
@@ -42,14 +45,45 @@ public class xmlParser {
         
         //getElementsByTagName searches the xml document and returns an array of elements with specified name
         //in this case the array is of size 1 because there is only one element with simEndTime as the name
-        NodeList nList = doc.getElementsByTagName("");
+        NodeList nList = doc.getElementsByTagName("u1");
         int temp = 0;
-        //currNode is then set to be the node in the array that we are currently at in nList which is simEndTime
+        
+        //currNode is then set to be the node in the array that we are currently at in nList which is u1
         Node currNode = nList.item(temp);
-        System.out.println("Current Element that we are at in XML is " + currNode.getNodeName());
-        //Gets the first child of the currNode (simEndTime) which is the text node, then gets the node value of the text node which is
-        //the value inside the simEndTime tags in the xml doc.
-        System.out.println(currNode.getFirstChild().getNodeValue());
+        
+        //Gets the children of the u1 module
+        NodeList children = currNode.getChildNodes();
+        int i=0;
+        while(i <children.getLength())
+        {
+            Node node = children.item(i);
+            if(node.getNodeType() == Node.ELEMENT_NODE)
+            {
+                if(node.getNodeName().equals(wOne))
+                {
+                    double val = Double.parseDouble(node.getTextContent());
+                    w1.set(val);
+                }
+                else if(node.getNodeName().equals(wTwo))
+                {
+                    double val = Double.parseDouble(node.getTextContent());
+                    w2.set(val);
+                }
+                else if(node.getNodeName().equals(hOne))
+                {
+                    double val = Double.parseDouble(node.getTextContent());
+                    h1.set(val);
+                }
+                else if(node.getNodeName().equals(K))
+                {
+                    double val = Double.parseDouble(node.getTextContent());
+                    k.set(val);
+                }
+                //System.out.println(node.getNodeName() + " value is: " + node.getTextContent());
+            }
+            
+            i++;
+        }
         
         
         

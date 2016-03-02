@@ -44,42 +44,16 @@ public class treeTraversal {
         
        Executive.system.printModuleVariablesRecursively(top);
 
+       
 
-
-
-
-        //Gets the children of the top module
-//        children = top.nslGetModuleChildrenVector();
-//        
-//        int i = 0;
-//        
-//        while(i < children.size())
-//        {
-//            System.out.println("Children of top module are: " + children.get(i));
-//            
-//            i++;
-//        }
-//        
-//        top.nslPrintChildModules();
-//        
-//        child1 = Executive.system.nslGetModuleRef(name);
-//        if (child1 == null) { 
-//            System.out.println("*** Child1 Module not found.***");
-//            
-//        }
-//        else {
-//            System.out.println("*** Child1 Module:" + child1.nslGetName());
-//        }
         
     }
     
-    public void setVariables(){
+    public void setUlayer(){
         
-        //This function will attempt to set the single value variables that are found in the hierarchy using maxSelectorModel. and xml
+        //This function will attempt to set the single value variables that are found in the Ulayer module of maxSelector using the xml parser.
         
-        xmlParser parse = new xmlParser();
-        parse.parseMaxSelector();
-        
+       
         
         
         

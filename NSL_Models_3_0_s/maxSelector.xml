@@ -3,9 +3,6 @@
 <chosenModel id="maxSelector">
 
 	<system>
-
-
-		
 		<simEndTime> 20.0 </simEndTime>
 		<simDelta> 0.01 </simDelta>
 		<diff>
@@ -13,17 +10,13 @@
 			<delta> 0.01 </delta>
 		</diff>
 		<model> MaxSelectorModel </model>
-		
-
 	</system>
 
 		<!-- setting all of the variable values -->
 	
 	<!-- these are all the modules found in the maxSelectorModel -->
 	<MaxSelectorModel>
-
 		<maxSelector>	
-
 			<tu> 1.0 </tu>
 			<tv> 1.0 </tv>
 			<k> 0.1 </k>
@@ -33,44 +26,35 @@
 			<hu> 0.1 </hu>
 			<hv> 0.5 </hv>
 			<in> 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </in>
-			<out> 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </out>
-			
+			<out> 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </out>			
 		</maxSelector>
-
+		
 		<stimulus>
-
 			<s_out> 0 0 0 0 1.0 0 0.5 0 0 0 </s_out>
-
 		</stimulus>
 		
 		<u1>
-
 			<s_in> 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </s_in> 
 			<v_in>0.0 </v_in>
 			<uf>0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </uf>
 			<up>0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </up>
-			<w1>0.0 </w1>
-			<w2>0.0 </w2>
-			<h1>0.0</h1>
-			<k>0.0</k>
+			<w1>1.0 </w1>
+			<w2>1.0 </w2>
+			<h1>0.1</h1>
+			<k>0.1</k>
 		</u1>
 		
-		<v1>
-			
+		<v1>		
 			<u_in> 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </u_in>
 			<vf> 0.0 </vf>
 			<vp> 0.0 </vp>
-			<h2> 0.0 </h2>
-			
+			<h2> 0.0 </h2>		
 		</v1>
-		
-		
-		<output>
-		
+			
+		<output>	
 			<s_out> 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </s_out>
 			<uf> 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </uf>
-			<up> 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </up>
-			
+			<up> 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </up>	
 		</output>	
 
 	</MaxSelectorModel>

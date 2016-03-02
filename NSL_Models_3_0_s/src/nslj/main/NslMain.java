@@ -357,13 +357,13 @@ public class NslMain {
         
      //********************************************************************************   
 //          xmlParser parse = new xmlParser();
-//          parse.parseMaxSelector();
+
      //********************************************************************************  
         
         
         
-        treeTraversal test = new treeTraversal();
-        test.printHierarchy();
+//        treeTraversal test = new treeTraversal();
+//        test.printHierarchy();
         
         
          
