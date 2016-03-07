@@ -30,12 +30,13 @@ public  void initModule() {
 	//enableAccess(up);
 }
   public  void initRun(){
-	uf.set(0);
-	up.set(0);
-	tau = 1.0;
+	//uf.set(0);  
+	//up.set(0);  
         
+        //if you want to change a variable value change it directly in the xml do not touch the xml parser class.
         xmlParser parse = new xmlParser();
-        parse.setULayer(w1,w2,h1,k);
+        parse.setULayer(w1,w2,h1,k, uf, up);    //sets all of the variables using the maxSelector.xml
+        tau = 1.0;
         
 //        treeTraversal print = new treeTraversal();
 //        print.printHierarchy();

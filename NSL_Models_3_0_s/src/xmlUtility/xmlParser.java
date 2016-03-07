@@ -24,7 +24,7 @@ import nslj.src.system.NslSystem;
 public class xmlParser {
     
       
-    public void setULayer(NslDouble0 w1, NslDouble0 w2, NslDouble0 h1, NslDouble0 k)
+    public void setULayer(NslDouble0 w1, NslDouble0 w2, NslDouble0 h1, NslDouble0 k, NslDoutDouble1 uf, NslDouble1 up)
     {
     /* Code for parsing maxSelector xml document and retrieving the data that will be used to initialzie model variables. */
         
@@ -32,6 +32,8 @@ public class xmlParser {
         String wTwo = "w2";
         String hOne = "h1";
         String K = "k";
+        String outport = "uf";
+        String size = "up";
                
          try {	
          File inputFile = new File("maxSelector.xml");
@@ -79,7 +81,30 @@ public class xmlParser {
                     double val = Double.parseDouble(node.getTextContent());
                     k.set(val);
                 }
-                //System.out.println(node.getNodeName() + " value is: " + node.getTextContent());
+                else if(node.getNodeName().equals(outport))
+                {
+                    String numbers = node.getTextContent();
+                    String[] parts = numbers.split(" ");    //splits the numbers by the spaces between them.
+                    double[] ufArray = new double[parts.length];
+                    for(int n = 0; n < parts.length; n++)
+                    {
+                        ufArray[n] = Double.parseDouble(parts[n]);
+                        uf.set(n, ufArray[n]);
+                    }
+                    
+                }
+                else if(node.getNodeName().equals(size))
+                {
+                    String numbers = node.getTextContent();
+                    String[] parts = numbers.split(" ");    //splits the numbers by the spaces between them.
+                    double[] upArray = new double[parts.length];
+                    for(int n = 0; n < parts.length; n++)
+                    {
+                        upArray[n] = Double.parseDouble(parts[n]);
+                        up.set(n, upArray[n]);
+                    }
+                    
+                }
             }
             
             i++;
@@ -95,6 +120,19 @@ public class xmlParser {
     
     
     }
-
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
 }
