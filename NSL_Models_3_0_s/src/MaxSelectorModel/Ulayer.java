@@ -32,6 +32,7 @@ public  void initModule() {
   public  void initRun(){
 	//uf.set(0);  
 	//up.set(0);  
+	
         
         //if you want to change a variable value change it directly in the xml do not touch the xml parser class.
         xmlParser parse = new xmlParser();

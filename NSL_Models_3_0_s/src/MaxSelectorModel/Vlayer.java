@@ -3,11 +3,13 @@ package MaxSelectorModel;
 // Vlayer
 //
 //////////////////////////////////////////////////////////////////////
+import hierarchyList.treeTraversal;
  import nslj.src.system.*; 
  import nslj.src.cmd.*; 
  import nslj.src.lang.*; 
  import nslj.src.math.*; 
  import nslj.src.display.*; 
+import xmlUtility.xmlParser;
 
 public class Vlayer/*()*/  extends NslModule/*()*/ {
 // ports 
@@ -20,10 +22,19 @@ private  double tau;         // time constant
 
 
 public  void initRun(){
-	vf.set(0);
-	vp.set(0);
-	tau=1.0;
-      h2.set(0.5);
+	//vf.set(0);
+	//vp.set(0);
+      //h2.set(0.5);
+     
+      //Change the xml values in v1 to change these 3 variables
+      xmlParser parseV1 = new xmlParser();
+      parseV1.setVLayer(vf, vp, h2);
+      tau=1.0;
+      
+      
+     //treeTraversal print = new treeTraversal();
+     //print.printHierarchy(); 
+      
   }
   public  void simRun(){
 	// vp=vp+((timestep/tv)*dv/dt)

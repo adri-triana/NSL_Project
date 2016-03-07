@@ -34,8 +34,8 @@
 		</stimulus>
 		
 		<u1>
-			<s_in> 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </s_in> 
-			<v_in>0.0 </v_in>
+			<s_in> 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </s_in> <!--> This value cannot be changed it is an inport -->
+			<v_in>0.0 </v_in>   <!--> This value cannot be changed it is an inport -->
 			<uf>0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </uf>
 			<up>0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </up>
 			<w1>1.0 </w1>
@@ -45,10 +45,10 @@
 		</u1>
 		
 		<v1>		
-			<u_in> 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </u_in>
+			<u_in> 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </u_in>  <!--> This value cannot be changed it is an inport -->
 			<vf> 0.0 </vf>
 			<vp> 0.0 </vp>
-			<h2> 0.0 </h2>		
+			<h2> 0.5 </h2>		
 		</v1>
 			
 		<output>	

@@ -27,10 +27,6 @@ public class treeTraversal {
     {
         String name = "maxSelectorModel.stimulus";
         NslModule top;
-	Vector children;
-        
-        
-	
 
 	top = Executive.system.nslGetModelRef(); 
 	if (top==null) {
@@ -40,30 +36,10 @@ public class treeTraversal {
        	    System.out.println("*** Top Module:" + top.nslGetName());
 	    
 	}
-	
         
        Executive.system.printModuleVariablesRecursively(top);
-
-       
-
         
     }
-    
-    public void setUlayer(){
-        
-        //This function will attempt to set the single value variables that are found in the Ulayer module of maxSelector using the xml parser.
-        
-       
-        
-        
-        
-    }
-    
-    
-    
-    
-    
-    
     
     
 }

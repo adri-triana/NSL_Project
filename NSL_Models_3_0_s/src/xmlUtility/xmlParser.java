@@ -35,15 +35,12 @@ public class xmlParser {
         String outport = "uf";
         String size = "up";
                
-         try {	
+         try 
+         {	
          File inputFile = new File("maxSelector.xml");
          DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
          DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
          Document doc = dBuilder.parse(inputFile);
-         doc.getDocumentElement().normalize();
-                  
-         System.out.println("Root element :" 
-            + doc.getDocumentElement().getNodeName());
         
         //getElementsByTagName searches the xml document and returns an array of elements with specified name
         //in this case the array is of size 1 because there is only one element with simEndTime as the name
@@ -110,18 +107,76 @@ public class xmlParser {
             i++;
         }
         
-        
-        
-         }
-         catch (Exception e) {
-         e.printStackTrace();
-         }
-    
-    
+        }
+        catch (Exception e) 
+        {
+            e.printStackTrace();
+        }
     
     }
     
     
+    public void setVLayer(NslDoutDouble0 vf, NslDouble0 vp, NslDouble0 h2)
+    {
+        
+        String vF = "vf";
+        String vP = "vp";
+        String hTwo = "h2";
+        
+               
+         try 
+         {	
+         File inputFile = new File("maxSelector.xml");
+         DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+         DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+         Document doc = dBuilder.parse(inputFile);
+        
+        //getElementsByTagName searches the xml document and returns an array of elements with specified name
+        //in this case the array is of size 1 because there is only one element with simEndTime as the name
+        NodeList nList = doc.getElementsByTagName("v1");
+        int temp = 0;
+        
+        //currNode is then set to be the node in the array that we are currently at in nList which is u1
+        Node currNode = nList.item(temp);
+        
+        //Gets the children of the u1 module
+        NodeList children = currNode.getChildNodes();
+        int i=0;
+        while(i <children.getLength())
+        {
+            Node node = children.item(i);
+            if(node.getNodeType() == Node.ELEMENT_NODE)
+            {
+                if(node.getNodeName().equals(vF))
+                {
+                    double val = Double.parseDouble(node.getTextContent());
+                    vf.set(val);
+                }
+                else if(node.getNodeName().equals(vP))
+                {
+                    double val = Double.parseDouble(node.getTextContent());
+                    vp.set(val);
+                }
+                else if(node.getNodeName().equals(hTwo))
+                {
+                    double val = Double.parseDouble(node.getTextContent());
+                    h2.set(val);
+                }
+                
+            }
+            
+            i++;
+        }
+        
+        }
+        catch (Exception e) 
+        {
+            e.printStackTrace();
+        }
+        
+        
+        
+    }
     
     
     
