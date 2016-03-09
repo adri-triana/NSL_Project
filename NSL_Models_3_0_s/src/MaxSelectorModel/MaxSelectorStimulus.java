@@ -10,6 +10,7 @@ package MaxSelectorModel;
  import nslj.src.lang.*; 
  import nslj.src.math.*; 
  import nslj.src.display.*; 
+import xmlUtility.xmlParser;
  
 
 public class MaxSelectorStimulus/*(int size)*/  extends NslModule/*()*/ {
@@ -18,10 +19,13 @@ public NslDoutDouble1 s_out ; /*(size)*/
 
 
 	public  void initRun() {
-		s_out.set(0);
-		(s_out).set(1,0.5);
-		(s_out).set(3,1.0);
-                (s_out).set(7,0.5);
+                //Set the values of s_out directly in the xml do not change values in the parser.
+                xmlParser parseStim = new xmlParser();
+                parseStim.setStimulus(s_out);
+                
+                
+//                treeTraversal print = new treeTraversal();
+//                print.printHierarchy(); 
                 
                                 
                                 

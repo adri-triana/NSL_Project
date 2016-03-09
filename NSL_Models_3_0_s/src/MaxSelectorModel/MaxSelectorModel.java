@@ -31,6 +31,7 @@ package MaxSelectorModel;
  import nslj.src.lang.*; 
  import nslj.src.math.*; 
  import nslj.src.display.*; 
+import xmlUtility.xmlParser;
 
 
 public class MaxSelectorModel/*()*/  extends NslModel/*()*/ {
@@ -42,8 +43,11 @@ public class MaxSelectorModel/*()*/  extends NslModel/*()*/ {
 	private MaxSelectorOutput output ; /*(size)*/  
 
 	public  void initSys() {
-		system.setRunEndTime(10.0);
-		system.nslSetRunDelta(0.01);
+		//system.setRunEndTime(10.0);
+		//system.nslSetRunDelta(0.01);
+                
+                xmlParser parseSys = new xmlParser();
+                parseSys.setSystemVar();
                 
 	}
 	public  void makeConn() {

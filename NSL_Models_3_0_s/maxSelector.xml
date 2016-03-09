@@ -3,13 +3,13 @@
 <chosenModel id="maxSelector">
 
 	<system>
-		<simEndTime> 20.0 </simEndTime>
-		<simDelta> 0.01 </simDelta>
+		<simEndTime>10.0</simEndTime>
+		<simDelta>0.01</simDelta>
 		<diff>
-			<integration> EULER </integration>
-			<delta> 0.01 </delta>
+			<integration>EULER</integration>
+			<delta>0.01</delta>
 		</diff>
-		<model> MaxSelectorModel </model>
+		<model>MaxSelectorModel</model>
 	</system>
 
 		<!-- setting all of the variable values -->
@@ -30,7 +30,7 @@
 		</maxSelector>
 		
 		<stimulus>
-			<s_out> 0 0 0 0 1.0 0 0.5 0 0 0 </s_out>
+			<s_out>0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.2 0.4 0.0</s_out>
 		</stimulus>
 		
 		<u1>
@@ -51,7 +51,7 @@
 			<h2> 0.5 </h2>		
 		</v1>
 			
-		<output>	
+		<output>    <!--> Do not need to change these values -->	
 			<s_out> 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </s_out>
 			<uf> 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </uf>
 			<up> 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </up>	

@@ -32,6 +32,7 @@ import java.util.Enumeration;
 import java.util.StringTokenizer;
 import java.math.BigDecimal;
 import java.lang.reflect.*;
+import xmlUtility.xmlParser;
 
 public class NslSystem {
 
@@ -184,6 +185,8 @@ public NslTrans nsltrans;
 public NslTranspose nsltranspose ;
 */
 
+  xmlParser getDeltaD = new xmlParser();
+  
     NslExecutive executive;
 /* you can use below line to get instantiation statements deom the above:
    awk '{print $2 "= new " $1 "();"}'
@@ -196,7 +199,7 @@ public NslTranspose nsltranspose ;
    */
  
 public NslSystem() {
-	double deltaDefault = 0.01;
+	double deltaDefault = getDeltaD.getRunDelta();  //always sets the default to whatever is the value in xml
  	modelRef=null;
     //module_list         = new Vector(20, 10);
     cmd_list            = new Vector(30, 10);
