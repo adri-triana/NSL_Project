@@ -80,8 +80,12 @@ public class NslMain {
         if (argv.length < 1) {
 	    throw new NslParseArgumentException();
 	}
- 
-	modelname=argv[0];
+        
+        xmlParser setModel = new xmlParser();
+        
+        modelname = setModel.setModel();
+        
+	//modelname =argv[0];
 
 	for(int i=1;i<argv.length;i++) {
 	

@@ -30,7 +30,7 @@ public class xmlParser {
     {
         String simEndTime = "simEndTime";
         String simDelta = "simDelta";
-        String model = "model";
+        
         
                
          try 
@@ -67,11 +67,7 @@ public class xmlParser {
                        Executive.system.nslSetRunDelta(val);
                        
                    }
-//                   else if(node.getNodeName().equals(model))
-//                   {
-//                       double val = Double.parseDouble(node.getTextContent());
-//                       
-//                   }
+
                }
                i++;
            }
@@ -85,6 +81,58 @@ public class xmlParser {
     
         
     }
+    
+    
+    public String setModel()
+    {
+        String model = "model";
+        
+         try 
+         {	
+            File inputFile = new File("maxSelector.xml");
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+            Document doc = dBuilder.parse(inputFile);
+
+           //getElementsByTagName searches the xml document and returns an array of elements with specified name
+           //in this case the array is of size 1 because there is only one element with simEndTime as the name
+           NodeList nList = doc.getElementsByTagName("system");
+           int temp = 0;
+
+           //currNode is then set to be the node in the array that we are currently at in nList which is u1
+           Node currNode = nList.item(temp);
+
+           //Gets the children of the u1 module
+           NodeList children = currNode.getChildNodes();
+           int i=0;
+           while(i <children.getLength())
+           {
+               Node node = children.item(i);
+               if(node.getNodeType() == Node.ELEMENT_NODE)
+               {
+                   if(node.getNodeName().equals(model))
+                   {
+                       return node.getTextContent();
+                       
+                   }
+                  
+
+               }
+               i++;
+           }
+        
+        }
+        catch (Exception e) 
+        {
+            e.printStackTrace();
+        }
+        
+        return "error";
+        
+    }
+    
+    
+    
     
     public double getRunDelta()
     {

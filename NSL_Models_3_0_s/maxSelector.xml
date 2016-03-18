@@ -9,7 +9,7 @@
 			<integration>EULER</integration>
 			<delta>0.01</delta>
 		</diff>
-		<model>MaxSelectorModel</model>
+		<model>MaxSelectorModel.MaxSelectorModel</model>
 	</system>
 
 		<!-- setting all of the variable values -->
@@ -30,7 +30,7 @@
 		</maxSelector>
 		
 		<stimulus>
-			<s_out>0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.2 0.4 0.0</s_out>
+			<s_out>0.0 0.5 1.0 0.0 0.0 1.0 0.0 0.2 0.4 0.0</s_out>
 		</stimulus>
 		
 		<u1>
