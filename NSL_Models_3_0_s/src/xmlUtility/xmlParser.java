@@ -83,7 +83,7 @@ public class xmlParser {
     }
     
     
-    public String setModel()
+    public String setModel() //Later, move this function to its own folder because it can be used for any model
     {
         String model = "model";
         
@@ -181,6 +181,53 @@ public class xmlParser {
          return -1;
     }  
         
+    public double getapproxDelta()
+    {
+        
+        String approxDelta = "delta";
+               
+         try 
+         {	
+            File inputFile = new File("maxSelector.xml");
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+            Document doc = dBuilder.parse(inputFile);
+
+           //getElementsByTagName searches the xml document and returns an array of elements with specified name
+           //in this case the array is of size 1 because there is only one element with simEndTime as the name
+           NodeList nList = doc.getElementsByTagName("diff");
+           int temp = 0;
+
+           //currNode is then set to be the node in the array that we are currently at in nList which is u1
+           Node currNode = nList.item(temp);
+
+           //Gets the children of the u1 module
+           NodeList children = currNode.getChildNodes();
+           int i=0;
+           while(i <children.getLength())
+           {
+               Node node = children.item(i);
+               if(node.getNodeType() == Node.ELEMENT_NODE)
+               {
+                   if(node.getNodeName().equals(approxDelta))
+                   {
+                       double val = Double.parseDouble(node.getTextContent());
+                       return val;
+                   }
+
+               }
+               i++;
+           }
+        
+        }
+        catch (Exception e) 
+        {
+            e.printStackTrace();
+        }
+         
+         return -1;
+    }  
+       
     
     
     public void setULayer(NslDouble0 w1, NslDouble0 w2, NslDouble0 h1, NslDouble0 k, NslDoutDouble1 uf, NslDouble1 up)

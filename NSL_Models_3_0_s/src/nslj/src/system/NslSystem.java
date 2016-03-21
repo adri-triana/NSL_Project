@@ -185,7 +185,7 @@ public NslTrans nsltrans;
 public NslTranspose nsltranspose ;
 */
 
-  xmlParser getDeltaD = new xmlParser();
+  xmlParser getDelta = new xmlParser();
   
     NslExecutive executive;
 /* you can use below line to get instantiation statements deom the above:
@@ -199,8 +199,9 @@ public NslTranspose nsltranspose ;
    */
  
 public NslSystem() {
-	double deltaDefault = getDeltaD.getRunDelta();  //always sets the default to whatever is the value in xml
- 	modelRef=null;
+	double deltaDefault = getDelta.getRunDelta();  //always sets the default to whatever is the value in xml
+ 	double approxDelta = getDelta.getapproxDelta();
+        modelRef=null;
     //module_list         = new Vector(20, 10);
     cmd_list            = new Vector(30, 10);
     nsldiff_list    = new Vector(2,1);
@@ -227,7 +228,7 @@ public NslSystem() {
     
     //System.out.println(Double.toString(_runDelta));
     
-    _approximationDelta = deltaDefault;
+    _approximationDelta = approxDelta;
     _approximationTimeConstantTM = 1.0;  
 
     // begin aa: 99/9/1 : this was in addModel
@@ -1549,6 +1550,7 @@ public NslHierarchy getRefToModuleOrClass(String name, char desiredAccess) {
    */
   public double nslGetApproximationDelta() {
     return _approximationDelta;
+    
   }
   /**
    * To set the time step size

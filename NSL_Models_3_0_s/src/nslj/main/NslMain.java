@@ -81,9 +81,9 @@ public class NslMain {
 	    throw new NslParseArgumentException();
 	}
         
-        xmlParser setModel = new xmlParser();
+        xmlParser setM = new xmlParser();
         
-        modelname = setModel.setModel();
+        modelname = setM.setModel();
         
 	//modelname =argv[0];
 

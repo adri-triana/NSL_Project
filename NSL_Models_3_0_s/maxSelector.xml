@@ -6,7 +6,7 @@
 		<simEndTime>10.0</simEndTime>
 		<simDelta>0.01</simDelta>
 		<diff>
-			<integration>EULER</integration>
+			<integration>EULER</integration> <!-- Do not change -->
 			<delta>0.01</delta>
 		</diff>
 		<model>MaxSelectorModel.MaxSelectorModel</model>
@@ -30,7 +30,7 @@
 		</maxSelector>
 		
 		<stimulus>
-			<s_out>0.0 0.5 1.0 0.0 0.0 1.0 0.0 0.2 0.4 0.0</s_out>
+			<s_out>0.0 0.5 1.0 0.0 0.0 0.0 0.0 0.2 0.4 0.0</s_out>
 		</stimulus>
 		
 		<u1>
