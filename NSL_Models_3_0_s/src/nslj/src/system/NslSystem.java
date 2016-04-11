@@ -250,6 +250,8 @@ public NslSystem() {
     stepMonitor = new NslSync();   
     displayMonitor = new NslDoubleSync();   
     displayMonitorAck = new NslDoubleSync();   
+    
+    
   }
 
 // private void instantiateMath()

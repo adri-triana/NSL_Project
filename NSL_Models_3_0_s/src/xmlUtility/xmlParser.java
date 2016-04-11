@@ -406,6 +406,7 @@ public class xmlParser {
         //Gets the children of the u1 module
         NodeList children = currNode.getChildNodes();
         int i=0;
+        
         while(i <children.getLength())
         {
             Node node = children.item(i);
@@ -419,8 +420,12 @@ public class xmlParser {
                     for(int n = 0; n < parts.length; n++)
                     {
                         s_outArray[n] = Double.parseDouble(parts[n]);
-                        s_out.set(n, s_outArray[n]);
+                        //s_out.set(n, s_outArray[n]);
+                        
                     }
+                    NslDouble1 arr = new NslDouble1(s_outArray);
+                    
+                    Executive.system.nslSetValue("maxSelectorModel.stimulus.s_out", arr);
                     
                 }
                 
@@ -436,6 +441,13 @@ public class xmlParser {
         {
             e.printStackTrace();
         }
+         
+       
+        NslData testData;
+        testData = Executive.system.nslGetValue("maxSelectorModel.stimulus.s_out");
+        System.out.println(testData.toString() );
+        //Executive.system.nslSetValue("maxSelectorModel.stimulus.s_out", testData);
+        
         
         
     }
